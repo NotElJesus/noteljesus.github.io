@@ -148,6 +148,93 @@ nav a[aria-current="page"] {
     margin-top: 0.5rem;
 }
 
+.project {
+    min-width: 0;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background-color: var(--surface);
+}
+
+.project h2 {
+    margin: 0;
+}
+
+.project-tools {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-grid > article + article {
+    margin-top: 0;
+}
+
+.project-image {
+    margin: 1.25rem 0;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+}
+
+.project-image figcaption {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Reusable WIP page decoration */
+.page-wip {
+    --tape-color: #E8B931;
+    --tape-height: 10px;
+}
+
+.page-wip::before,
+.page-wip::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: var(--tape-height);
+    z-index: 10;
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        135deg,
+        var(--tape-color) 0,
+        var(--tape-color) 12px,
+        var(--background) 12px,
+        var(--background) 24px
+    );
+}
+
+.page-wip::before {
+    top: 0;
+}
+
+.page-wip::after {
+    bottom: 0;
+}
+
+.wip-notice {
+    margin: 0 0 1.5rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--accent);
+    background-color: var(--surface);
+    font-size: 0.875rem;
+}
+
 /* Desktop layout */
 @media (min-width: 48rem) {
     body {
@@ -174,8 +261,12 @@ nav a[aria-current="page"] {
         grid-row: 1;
 
         width: 100%;
-        margin-inline: 2%;
+        margin-inline: 0;
         padding: 4rem 2rem;
+    }
+
+    main:has(.project-grid) {
+        max-width: 72rem;
     }
 }
 
@@ -183,5 +274,11 @@ nav a[aria-current="page"] {
 @media (max-width: 47.999rem) {
     h1 {
         font-size: 2rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }

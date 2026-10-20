@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
-<body>
+<body class="page-wip">
     <header class="sidebar">
         <a class="site-name" href="/">Jesus Peralta</a>
 
@@ -26,12 +26,74 @@
     </header>
 
     <main>
+
+        <p class="wip-notice">
+            Work in progress — this page is still being developed.
+        </p>
         <section>
             <h1>Projects</h1>
             <p>
-                The projects will be shown here soon.
+                A selection of my coursework and personal projects.
             </p>
         </section>
+
+        <div class="project-grid">
+            <article class="project" aria-labelledby="acoustic-tomography-title">
+                <h2 id="acoustic-tomography-title">
+                    Acoustic Tomography
+                </h2>
+
+                <p class="project-tools">Python · Image Reconstruction</p>
+
+                <p>
+                    <!--
+                    How can we see what is happening beneath a plant without digging it up? That was the
+                    question behind my capstone project. Our team explored acoustic tomography to reconstruct an
+                    image of the rhizosphere—the soil surrounding a plant's roots. The idea is similar to a CT
+                    scan: measurements taken along different paths are used to reconstruct an image of the
+                    interior. In our case, the approach uses sound instead of X-rays which was a tested method
+                    of the team that had our capstone project before us.
+                    -->
+
+                    How can we see beneath a plant without digging it up? Our capstone team explored acoustic tomography
+                    to image the soil surrounding plant roots using sound measurements.
+                </p>
+
+                <figure class="project-image">
+                    <img src="/assets/images/acoustic-tomography.png"
+                        alt="Original input image beside the acoustic tomography reconstruction.">
+                </figure>
+
+                <p>
+                    <strong>My contribution:</strong>
+                    <!--
+                    So. . . where did I come in? I worked with a teammate to develop a Python simulation using
+                    the Simultaneous Iterative Reconstruction Technique (SIRT). We used input images to test how
+                    well the algorithm could reconstruct them from simulated measurements. This gave us a proof
+                    of concept and a way to investigate the reconstruction process before applying it to real
+                    acoustic measurements. With further development, the goal was to adapt the implementation
+                    for data collected by the physical system. I also worked on improving the ray calculations
+                    using Siddon's algorithm, which calculates the length of a ray's path through each pixel.
+                    Although I did not finish integrating it into the simulation, preliminary testing suggested
+                    that it improved reconstruction quality compared with our previous method.
+                    -->
+                    I developed a Python simulation with a teammate to test image reconstruction using SIRT. I also
+                    explored Siddon's algorithm to improve ray calculations, with promising preliminary results.
+                    <!--
+                    <a href="">
+                        More about Acoustic Tomography →
+                    </a>
+                    -->
+                </p>
+            </article>
+
+            <article class="project" aria-labelledby="work-in-progress">
+                <!-- Another project's content -->
+                <h2 id="work-in-progress">
+                    WORK IN PROGRESS
+                </h2>
+            </article>
+        </div>
     </main>
 </body>
 
