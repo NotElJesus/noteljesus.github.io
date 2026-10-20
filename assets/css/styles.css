@@ -39,6 +39,10 @@ a:focus-visible {
 .sidebar {
     background-color: var(--surface);
     padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .site-name {
@@ -58,6 +62,53 @@ a:focus-visible {
     flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* Social profile links at the bottom of the sidebar */
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 0.4rem;
+
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    background-color: var(--background);
+}
+
+.social-links svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.social-links a + a {
+    position: relative;
+}
+
+.social-links a + a::before {
+    content: "";
+    position: absolute;
+    left: -0.25rem;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background-color: var(--border);
 }
 
 main {
@@ -286,6 +337,10 @@ nav a[aria-current="page"] {
 @media (max-width: 47.999rem) {
     h1 {
         font-size: 2rem;
+    }
+
+    .social-links {
+        margin-top: 2rem;
     }
 }
 
