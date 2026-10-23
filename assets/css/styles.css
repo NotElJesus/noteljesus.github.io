@@ -240,21 +240,12 @@ nav a[aria-current="page"] {
     margin-top: 0;
 }
 
-.project-image {
-    margin: 1.25rem 0;
-}
-
-.project-image img {
+.project-thumbnail {
     display: block;
     width: 100%;
     height: auto;
+    margin-block: 1rem;
     border-radius: 0.4rem;
-}
-
-.project-image figcaption {
-    margin-top: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.875rem;
 }
 
 /* Reusable WIP page decoration */
